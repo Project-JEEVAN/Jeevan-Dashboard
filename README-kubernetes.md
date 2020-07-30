@@ -5,8 +5,8 @@ Follow these instructions to deploy this application to a Kubernetes cluster and
 ## Download
 
 ```bash
-https://github.com/IBM-Cloud/get-started-python
-cd get-started-python
+https://github.com/Project-JEEVAN/Jeevan-Dashboard
+cd Jeevan-Dashboard
 ```
 
 ## Build Docker Image
@@ -62,12 +62,12 @@ kubectl create secret generic cloudant --from-literal=url=https://myusername:pas
   ```
 - **Paid Cluster**: Expose the service using an External IP and Loadbalancer
   ```
-  kubectl expose deployment get-started-python --type LoadBalancer --port 8000 --target-port 8000
+  kubectl expose deployment Jeevan-Dashboard --type LoadBalancer --port 8000 --target-port 8000
   ```
 
 - **Free Cluster**: Use the Worker IP and NodePort
   ```bash
-  kubectl expose deployment get-started-python --type NodePort --port 8000 --target-port 8000
+  kubectl expose deployment Jeevan-Dashboard--type NodePort --port 8000 --target-port 8000
   ```
 
 ### Access the application
@@ -75,23 +75,23 @@ kubectl create secret generic cloudant --from-literal=url=https://myusername:pas
 Verify **STATUS** of pod is `RUNNING`
 
 ```shell
-kubectl get pods -l app=get-started-python
+kubectl get pods -l app=Jeevan-Dashboard
 ```
 
 **Standard (Paid) Cluster:**
 
-1. Identify your LoadBalancer Ingress IP using `kubectl get service get-started-python`
+1. Identify your LoadBalancer Ingress IP using `kubectl get service Jeevan-Dashboard`
 2. Access your application at t `http://<EXTERNAL-IP>:8000/`
 
 **Free Cluster:**
 
 1. Identify your Worker Public IP using `ibmcloud cs workers YOUR_CLUSTER_NAME`
-2. Identify the Node Port using `kubectl describe service get-started-python`
+2. Identify the Node Port using `kubectl describe service Jeevan-Dashboard`
 3. Access your application at `http://<WORKER-PUBLIC-IP>:<NODE-PORT>/`
 
 
 ## Clean Up
 ```bash
-kubectl delete deployment,service -l app=get-started-python
+kubectl delete deployment,service -l app=Jeevan-Dashboard
 kubectl delete secret cloudant
 ```

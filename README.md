@@ -16,11 +16,11 @@ You'll need the following:
 
 Now you're ready to start working with the app. Clone the repo and change to the directory where the sample app is located.
   ```
-git clone https://github.com/IBM-Cloud/get-started-python
-cd get-started-python
+git clone https://github.com/Project-JEEVAN/Jeevan-Dashboard.git
+cd Jeevan-Dashboard
   ```
 
-  Peruse the files in the *get-started-python* directory to familiarize yourself with the contents.
+  Peruse the files in the *Jeevan-Dashboard* directory to familiarize yourself with the contents.
 
 ## 2. Run the app locally
 
@@ -74,7 +74,7 @@ Login to your IBM Cloud account
 cf login
   ```
 
-From within the *get-started-python* directory push your app to IBM Cloud
+From within the *Jeevan-Dashboard* directory push your app to IBM Cloud
   ```
 cf push
   ```
@@ -102,7 +102,7 @@ Environment variables enable you to separate deployment settings from your sourc
 
 We're now going to update your local code to point to this database. We'll create a json file that will store the credentials for the services the application will use. This file will get used ONLY when the application is running locally. When running in IBM Cloud, the credentials will be read from the VCAP_SERVICES environment variable.
 
-1. Create a file called `vcap-local.json` in the `get-started-python` directory with the following content:
+1. Create a file called `vcap-local.json` in the `Jeevan-Dashboard` directory with the following content:
   ```
   {
     "services": {
